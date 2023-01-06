@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config';
 
-export default registerAs('coffees', () => ({
+export default registerAs('coffee', () => ({
   foo: 'bar',
 }));
