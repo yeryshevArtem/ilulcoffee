@@ -31,21 +31,26 @@ export class CoffeesController {
     return this.coffeeService.findAll(paginationQuery);
   }
 
+  @Public()
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: string) {
     return this.coffeeService.findOne(id);
   }
 
+  @Public()
   @Post()
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
+    console.log('POST', '2222222222');
     return this.coffeeService.create(createCoffeeDto);
   }
 
+  @Public()
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
     return this.coffeeService.update(id, updateCoffeeDto);
   }
 
+  @Public()
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.coffeeService.remove(id);
